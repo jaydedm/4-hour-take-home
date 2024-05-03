@@ -21,9 +21,6 @@ export function CreatePost() {
   const [gif, setGif] = useState<IGif | null>(null)
   const [searchForGIF, setSearchForGIF] = useState(false);
 
-  const gf = new GiphyFetch('cJhEPSHWdB78mHfTM5NqwICS1JfvQgrz')
-  const fetchGifs = (offset: number) => gf.trending({ offset, limit: 10 })
-  const searchGifs = (query: string) => gf.search(query, { limit: 10 })
 
   const Components = () => {
     const { fetchGifs, searchKey } = useContext(SearchContext)
@@ -37,7 +34,7 @@ export function CreatePost() {
                 e.g. changing from search term dogs to cats or type gifs to stickers
                 you want to restart the gifs from the beginning and changing a component's key does that
             **/}
-        <Grid key={searchKey} columns={3} width={800} fetchGifs={fetchGifs} noLink onGifClick={(e) => console.log(e)}/>
+        <Grid key={searchKey} columns={3} width={800} fetchGifs={fetchGifs} noLink onGifClick={setGif}/>
       </>
     )
   }
@@ -55,7 +52,6 @@ export function CreatePost() {
     },
   });
 
-  console.log(gif)
 
   return (
     <div className='w-full justify-center text-center'>

@@ -55,6 +55,8 @@ async function CrudShowcase() {
   console.log('session', session)
 
   const latestPost = await api.post.getLatest();
+  const latestProfilePicture = await api.profilePicture.getProfilePictureURL()
+  console.log('latestProfilePicture', latestProfilePicture)
 
   return (
         <CreatePost />
