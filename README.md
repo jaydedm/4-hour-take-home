@@ -1,6 +1,6 @@
 # Hello Adim Team
 
-Here is the result of my four hours working this morning.
+Here is the result of my 3.5 hours working this morning.
 
 Thank you so much for the time you've already invested in considering me. I got awfully close to finishing everythign in the alotted time, but didn't quite finish. I wasn't too familiar with a bit of the tooling so most of my time was spent ramping up. Also, the requirements stated "User" implying authorization to tie a user to a session and be able to save profile pictures, and I did plan off of this presumption.
 
