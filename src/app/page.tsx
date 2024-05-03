@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from 'next/image';
 
-import { ChooseProfilePicture, CreatePost } from "~/app/_components/chooseProfilepicture";
+import { ChooseProfilePicture } from "~/app/_components/chooseProfilepicture";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
   const session = await getServerAuthSession();
 
   return (
@@ -52,9 +51,6 @@ async function CrudShowcase() {
   const session = await getServerAuthSession();
   if (!session?.user) return null;
 
-  console.log('session', session)
-
-  const latestPost = await api.post.getLatest();
   const latestProfilePicture = await api.profilePicture.getProfilePictureURL()
   console.log('latestProfilePicture', latestProfilePicture)
 
