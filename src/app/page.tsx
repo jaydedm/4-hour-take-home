@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 
-import { CreatePost } from "~/app/_components/create-post";
+import { ChooseProfilePicture, CreatePost } from "~/app/_components/chooseProfilepicture";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 
@@ -59,6 +59,6 @@ async function CrudShowcase() {
   console.log('latestProfilePicture', latestProfilePicture)
 
   return (
-        <CreatePost />
+        <ChooseProfilePicture />
   );
 }
