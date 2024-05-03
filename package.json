@@ -14,8 +14,11 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.4.0",
+    "@giphy/js-fetch-api": "^5.5.0",
+    "@giphy/react-components": "^9.5.0",
     "@prisma/client": "^5.10.2",
     "@t3-oss/env-nextjs": "^0.10.1",
+    "@tailwindcss/typography": "^0.5.13",
     "@tanstack/react-query": "^5.25.0",
     "@trpc/client": "next",
     "@trpc/react-query": "next",
@@ -25,6 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "server-only": "^0.0.1",
+    "styled-components": "^6.1.9",
     "superjson": "^2.2.1",
     "zod": "^3.23.3"
   },
@@ -35,6 +39,8 @@
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
+    "autoprefixer": "10.4.15",
+    "daisyui": "^4.10.5",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.1.3",
     "postcss": "^8.4.34",
