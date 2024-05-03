@@ -28,7 +28,7 @@ export default async function Home() {
               {session &&
                 <>
                   <span>Logged in as {session.user?.name}</span>
-                  <Image src='https://avatars.githubusercontent.com/u/37424998?v=4' alt='Profile Pic' width={300} height={300}></Image>
+                  <Image src={session?.user?.image ?? ""} alt='Profile Pic' width={300} height={300}></Image>
                 </>
               }
 
