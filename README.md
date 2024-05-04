@@ -1,6 +1,6 @@
 # Hello Adim Team
 
-Here is the result of my 3.5 hours working this morning.
+Can't make this private since I forked a copy from your repo -- Can delete later
 
 Deployed Demo [HERE](https://4-hour-take-home.vercel.app/)
 
