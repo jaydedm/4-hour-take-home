@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
 import { type IGif } from '@giphy/js-types';
@@ -10,7 +9,6 @@ import GiphySearchGrid from './GiphySearchGrid';
 
 
 export function ChooseProfilePicture() {
-  const router = useRouter();
   const [gif, setGif] = useState<IGif | null>(null)
   const [searchForGIF, setSearchForGIF] = useState(false);
 
@@ -19,12 +17,12 @@ export function ChooseProfilePicture() {
     setGif(gif)
   }, [])
 
-  const createGiphyURL = api.post.create.useMutation({
-    onSuccess: () => {
-      router.refresh();
-      setGif(null)
-    },
-  });
+  // const createGiphyURL = api.post.create.useMutation({
+  //   onSuccess: () => {
+  //     router.refresh();
+  //     setGif(null)
+  //   },
+  // });
 
 
   return (
