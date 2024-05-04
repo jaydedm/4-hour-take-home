@@ -1,12 +1,16 @@
 import Link from "next/link";
-import Image from 'next/image';
 
-import { ChooseProfilePicture } from "~/app/_components/chooseProfilepicture";
+import { ChooseProfilePicture } from "~/app/_components/ChooseProfilePicture";
 import { getServerAuthSession } from "~/server/auth";
-import { api } from "~/trpc/server";
+import ProfilePicture from './_components/ProfilePicture';
 
 export default async function Home() {
   const session = await getServerAuthSession();
+
+  // would work if we had save flow finished
+  // const latestGiphyProfilePicture = await api.profilePicture.getGiphyProfilePictureURL()
+     const latestGiphyProfilePicture = '';
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
@@ -18,16 +22,15 @@ export default async function Home() {
         </div>
         <div className="flex flex-col items-center gap-2">
           <p className="text-2xl text-white">
-            {/* {hello ? hello.greeting : "Loading tRPC query..."} */}
             Hello!
           </p>
 
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-cente· justify-center gap-4">
             <p className="text-center text-2xl text-white">
               {session &&
                 <>
                   <span>Logged in as {session.user?.name}</span>
-                  <Image src={session?.user?.image ?? ""} alt='Profile Pic' width={300} height={300}></Image>
+                  <ProfilePicture githubSession={session} giphyURL={latestGiphyProfilePicture}/>
                 </>
               }
 
@@ -43,18 +46,16 @@ export default async function Home() {
 
         <CrudShowcase />
       </div>
-    </main>
+    </main >
   );
 }
+
 
 async function CrudShowcase() {
   const session = await getServerAuthSession();
   if (!session?.user) return null;
 
-  const latestProfilePicture = await api.profilePicture.getProfilePictureURL()
-  console.log('latestProfilePicture', latestProfilePicture)
-
   return (
-        <ChooseProfilePicture />
+    <ChooseProfilePicture />
   );
 }
