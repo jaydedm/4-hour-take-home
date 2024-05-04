@@ -10,25 +10,23 @@ Thank you so much for the time you've already invested in considering me. I got 
 
 Here's what IS finished, which was the bulk of the work:
 
+- Deployed postgreSQL DB via Supabase with complete schema/design ready to meet requirements.
 - OAuth integration with Github for easy login/logout experience
 - integration with GIPHY api
 - Basic UX/UI for login/logout and profile picture selection
 - env variables created and securely stored, and specified for error prevention during build
-- All BE plumbing is complete and type-secured to save profile pictures to a user account based on the GitHub userID in the session. Leveraged TRPC/prisma routers
-- Deployed application on Vercel
+- All FE/BE communication plumbing is complete and type-secured to save profile pictures to a user account based on the GitHub userID in the session. Leveraged TRPC/prisma routers. Just needs to be plugged into a button in the UI.
+- Deployed UI on Vercel
 - default profile pic from their github profile
 - DB call on load to set the user profile picture to the GIF if they have one saved
-- deployed database using supabase
 
 Basic remainder work:
 
 - add a save button that calls the api (function and BE "plumbing" already complete) to save the profile URL in the DB (small task)
-- refactor (small task)
+- refactor
 
 "back of the napkin" Future considerations:
 Performance/cost optimizations:
-- alternative ways to store profile pic (Storing actual GIF in S3, etc.)
+- alternative ways to store profile pic (Storing actual GIF components in S3, etc.)
 - alternative authorization
-- extra credit requirements
-
-
+- extra credit tasks
